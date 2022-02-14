@@ -1,8 +1,8 @@
 import re
 
-def encrypt(text,s) :
+def decrypt(text,s) :
    
-    cipher = ""
+    plain = ""
 
     regex = "|^&+-%*/=!>#@$£€"
 
@@ -12,22 +12,22 @@ def encrypt(text,s) :
 
       if (char.isupper()) :
 
-         cipher += chr((ord(char) - s - 65) % 26 + 65)
+         plain += chr((ord(char) - s - 65) % 26 + 65)
 
       elif (char.islower()):
 
-         cipher += chr((ord(char) - s - 97) % 26 + 97)
+         plain += chr((ord(char) - s - 97) % 26 + 97)
 
       else :
 
-         cipher +=char
+         plain +=char
 
 
-    return cipher
+    return plain
 
 
 text = input("Enter the cipher text: ")
 
 s = int(input("Enter the shift pattern: "))
 
-print ("Cipher: " + encrypt(text,s))
+print ("Plain Text: " + decrypt(text,s))
