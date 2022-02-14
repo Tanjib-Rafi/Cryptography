@@ -4,8 +4,6 @@ def decrypt(text,s) :
    
     plain = ""
 
-    regex = "|^&+-%*/=!>#@$£€"
-
     for i in range(len(text)) :
 
       char = text[i]   
